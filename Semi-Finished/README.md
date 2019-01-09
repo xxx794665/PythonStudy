@@ -5,5 +5,5 @@
 将图片转换为彩色字节图
 ## zodiac.py 
 分别使用for循环和while循环判断输入日期的星座
-## zodiac.py 
+## zodiac_v2.py 
 使用字典和while循环判断输入日期的生肖和星座，并输出统计记录
