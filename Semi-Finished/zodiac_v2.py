@@ -18,31 +18,38 @@ for i in zodiac_name:
 
 # 无限循环
 while True:
+    try:
 
-    year = input("请输入您的出生年份:")
+        year = input("请输入您的出生年份:")
 
-    month = int(input('请输入您的出生月份：'))
+        month = int(input('请输入您的出生月份：'))
 
-    day = int(input('请输入您的出生日期：'))
+        day = int(input('请输入您的出生日期：'))
 
-    remainder = (int(year) - 4) % 12
+        remainder = (int(year) - 4) % 12
 
-    # 使用while循环
-    n = 0
-    while zodiac_days[n] < (month, day):
-        if month == 12 and day > 23:
-            break
-        n += 1
+        # 使用while循环
+        n = 0
+        while zodiac_days[n] < (month, day):
+            if month == 12 and day > 23:
+                break
+            n += 1
 
-    print('您的出生日期为%s年%s月%s日，您的生肖属相是%s，您的星座是%s。' %
-          (year, month, day, chinese_animal[int(remainder)], zodiac_name[n]))
-    # print(str(year) + "的生肖属相是：" + chinese_animal[int(remainder)])
-    # print('您查询的日期的星座是：' + str(zodiac_name[n]))
-    ca_num[chinese_animal[int(remainder)]] += 1
-    zn_num[zodiac_name[n]] += 1
+        print(
+            '您的出生日期为%s年%s月%s日，您的生肖属相是%s，您的星座是%s。' %
+            (year, month, day, chinese_animal[int(remainder)], zodiac_name[n]))
+        # print(str(year) + "的生肖属相是：" + chinese_animal[int(remainder)])
+        # print('您查询的日期的星座是：' + str(zodiac_name[n]))
+        ca_num[chinese_animal[int(remainder)]] += 1
+        zn_num[zodiac_name[n]] += 1
 
-    # 输出生肖和星座的统计信息
-    for each_key in ca_num.keys():
-        print('使用者中生肖为%s，一共有%d 个' % (each_key, ca_num[each_key]))
-    for each_key in zn_num.keys():
-        print('使用者中星座为%s，一共有%d 个' % (each_key, zn_num[each_key]))
+    except (ValueError, IndexError):
+        print('请输入正确的日期格式')
+
+    finally:
+
+        # 输出生肖和星座的统计信息
+        for each_key in ca_num.keys():
+            print('使用者中生肖为%s，一共有%d 个' % (each_key, ca_num[each_key]))
+        for each_key in zn_num.keys():
+            print('使用者中星座为%s，一共有%d 个' % (each_key, zn_num[each_key]))
