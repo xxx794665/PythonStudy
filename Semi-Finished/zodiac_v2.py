@@ -34,7 +34,7 @@ while True:
             if month == 12 and day > 23:
                 break
             n += 1
-
+            
         print(
             '您的出生日期为%s年%s月%s日，您的生肖属相是%s，您的星座是%s。' %
             (year, month, day, chinese_animal[int(remainder)], zodiac_name[n]))
