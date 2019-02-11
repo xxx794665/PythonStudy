@@ -7,5 +7,5 @@
 分别使用for循环和while循环判断输入日期的星座
 ## [zodiac_v2.py](/Semi-Finished/zodiac_v2.py)
 使用字典和while循环判断输入日期的生肖和星座，并输出统计记录
-## [spider](/spider)
+## [spider]
 spider文件夹内是一些爬虫项目的demo
