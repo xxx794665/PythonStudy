@@ -151,6 +151,8 @@ def get_comments(url, selectionId, selectionName, selectionSinger):
         else:
             time.sleep(0.5)
             pageNum += 1
+    
+    print('爬取已完成！')
 
 
 
